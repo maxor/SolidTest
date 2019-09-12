@@ -12,16 +12,26 @@ namespace SolidTest
     {
         static void Main(string[] args)
         {
-            CBRWebData cbr = new CBRWebData();
+            string _date;
+            //date format 20.12.2019
+            if (args.Count() > 0)
+                _date = args[0];
+            else
+            {
+                Console.Write("Введите дату в формате 'dd.mm.yyyy'");
+                _date = Console.ReadLine();
+            }
+            CBRWebData cbr = new CBRWebData(_date);
             cbr.GetData();
             RateParser rate = new RateParser(cbr.RateData);
             rate.DocParser();
-            CurrencyParser currency = new CurrencyParser(cbr.CurrencyData);
-            currency.DocParser();
-            
+            ExcelGenerator eg = new ExcelGenerator(_date);
+            eg.GenerateExcelFile(rate);
 
-            Console.ReadKey();
 
+           // CurrencyParser currency = new CurrencyParser(cbr.CurrencyData);
+           // currency.DocParser();
+            //Console.ReadKey();
         }
     }
 }

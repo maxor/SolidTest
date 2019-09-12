@@ -13,6 +13,7 @@ namespace SolidTest.Data
         public string EngName { get; private set; }
         public string Nominal { get; private set; }
         public string ParentCode { get; private set; }
+        
 
         public CBRCurrency(string id, string name, string engName, string nominal, string parentCode)
         {

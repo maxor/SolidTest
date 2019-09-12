@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SolidTest.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,11 @@ namespace SolidTest.Controls
     public class CBRXMLParser
     {
         protected XmlDocument _document { get; private set; }
+
+        public List<CBRCurrency> Currency;
+        public List<CBRRate> Rates;
+
+
         public CBRXMLParser(string xml)
         {
             _document = CheckXML(xml);

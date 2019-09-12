@@ -10,7 +10,6 @@ namespace SolidTest.Controls
 {
     public class CurrencyParser : CBRXMLParser
     {
-        List<CBRCurrency> Currency;
         public CurrencyParser(string xml) : base(xml)
         {
             Currency = new List<CBRCurrency>();

@@ -10,7 +10,6 @@ namespace SolidTest.Controls
 {
     public class RateParser : CBRXMLParser
     {
-        List<CBRRate> Rates;
         public RateParser(string xml) : base(xml)
         {
             Rates = new List<CBRRate>();
@@ -22,6 +21,7 @@ namespace SolidTest.Controls
             {
                 Rates.Add(new CBRRate(
                    node.Attributes["ID"].Value,
+                   DateTime.Now,
                     Convert.ToInt32(node.SelectSingleNode("NumCode").InnerText),
                     node.SelectSingleNode("CharCode").InnerText,
                     node.SelectSingleNode("Nominal").InnerText,

@@ -17,7 +17,7 @@ namespace SolidTest.Data
             <Value>44,8914</Value>
         </Valute>
         */
-        public CBRRate(string id, int numCode, string charCode, string nominal, string name, double value)
+        public CBRRate(string id, DateTime date, int numCode, string charCode, string nominal, string name, double value)
         {
             ID = id;
             NumCode = numCode;
@@ -25,6 +25,7 @@ namespace SolidTest.Data
             Nominal = nominal;
             Name = name;
             Value = value;
+            Date = date;
         }
 
         public string ID { get; private set; }
@@ -33,5 +34,6 @@ namespace SolidTest.Data
         public string Nominal { get; private set; }
         public string Name { get; private set; }
         public double Value { get; private set; }
+        public DateTime Date { get; set; }
     }
 }
