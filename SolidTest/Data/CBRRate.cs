@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SolidTest.Data
 {
-    public class CBRRate
+    public class CBRRate : CBR
     {
         /*
         <Valute ID="R01010">
@@ -17,21 +17,18 @@ namespace SolidTest.Data
             <Value>44,8914</Value>
         </Valute>
         */
-        public CBRRate(string id, DateTime date, int numCode, string charCode, string nominal, string name, double value)
+        public CBRRate(string id, DateTime date, int numCode, string charCode, int nominal, string name, double value)
         {
-            ID = id;
+            Id = id;
             NumCode = numCode;
-            ChaeCode = charCode;
+            CharCode = charCode;
             Nominal = nominal;
             Name = name;
             Value = value;
             Date = date;
         }
-
-        public string ID { get; private set; }
         public int NumCode { get; private set; }
-        public string ChaeCode { get; private set; }
-        public string Nominal { get; private set; }
+        public string CharCode { get; private set; }
         public string Name { get; private set; }
         public double Value { get; private set; }
         public DateTime Date { get; set; }

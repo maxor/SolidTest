@@ -10,8 +10,7 @@ namespace SolidTest.Data
             : base("name=SolidContext")
         {
         }
-
-        public virtual DbSet<CBRRate> CBRRates { get; set; }
-        public virtual DbSet<CBRCurrency> CBRCurrency { get; set; }
+        public virtual DbSet<Rate> Rates { get; set; }
+        public virtual DbSet<Currency> Currencies { get; set; }
     }
 }

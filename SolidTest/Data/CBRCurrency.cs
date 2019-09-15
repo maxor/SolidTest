@@ -6,16 +6,14 @@ using System.Threading.Tasks;
 
 namespace SolidTest.Data
 {
-    public class CBRCurrency
+    public class CBRCurrency : CBR
     {
-        public string Id { get; private set; }
         public string Name { get; private set; }
         public string EngName { get; private set; }
-        public string Nominal { get; private set; }
         public string ParentCode { get; private set; }
         
 
-        public CBRCurrency(string id, string name, string engName, string nominal, string parentCode)
+        public CBRCurrency(string id, string name, string engName, int nominal, string parentCode)
         {
             Id = id;
             Name = name;

@@ -6,15 +6,10 @@ using System.Threading.Tasks;
 
 namespace SolidTest.Data
 {
-    public class SolidDB
+    public class CBR
     {
-        public void InsertOrUpdate()
-        {
-
-        }
-
-
-
+        public string Id{ get; set; }
+        public int Nominal { get; set; }
 
     }
 }
