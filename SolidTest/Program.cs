@@ -32,7 +32,7 @@ namespace SolidTest
                 return (DateTime.TryParse(args[0], out result)) ? result : DateTime.Now;
             else
             {
-                Console.Write("Введите дату в формате 'dd.mm.yyyy'");
+                Console.Write("Введите дату в формате 'dd.mm.yyyy':");
                 return (DateTime.TryParse(Console.ReadLine(), out result)) ? result : DateTime.Now;
             }
             
