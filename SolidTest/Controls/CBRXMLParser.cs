@@ -66,7 +66,7 @@ namespace SolidTest.Controls
                         node.SelectSingleNode("CharCode").InnerText,
                         Convert.ToInt32(node.SelectSingleNode("Nominal").InnerText),
                         node.SelectSingleNode("Name").InnerText,
-                        Convert.ToDouble(node.SelectSingleNode("Value").InnerText)
+                        GetDouble(node.SelectSingleNode("Value").InnerText)
                         ));
                 }
             }
@@ -76,6 +76,21 @@ namespace SolidTest.Controls
             }
             
         }
+
+        double GetDouble(string number)
+        {
+            double num;
+            try
+            {
+                num = Convert.ToDouble(number);
+            }
+            catch 
+            {
+                num = Convert.ToDouble(number.Replace(',','.'));
+            }
+            return num;
+        }
+
 
         protected void ParseCurrency()
         {
