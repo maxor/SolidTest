@@ -45,9 +45,15 @@ namespace SolidTest.Controls
             }
             catch (Exception e)
             {
-                onError(this, new ErrorEventArgs(e.Data.ToString()));
+                onError(this, new ErrorEventArgs(6));
             }
-            
+            if (this.CurrencyData == null)
+                onError(this, new ErrorEventArgs(0));
+            if (this.RateData == null)
+                onError(this, new ErrorEventArgs(1));
+
+
+
         }
 
 

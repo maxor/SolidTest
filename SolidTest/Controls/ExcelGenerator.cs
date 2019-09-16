@@ -42,6 +42,8 @@ namespace SolidTest.Controls
             List<Worksheet> list = new List<Worksheet>();
             int i = 0;
             task[i] = GenerateWorkSheetAsync("RUR",  data);
+            if (data.Rates == null | data.Rates.Count() == 0)
+                return;
             foreach (CBRRate rate in data.Rates)
             {
                 i++;

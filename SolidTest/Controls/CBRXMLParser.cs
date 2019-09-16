@@ -28,7 +28,7 @@ namespace SolidTest.Controls
             }
             catch(Exception e)
             {
-                onError(this, new ErrorEventArgs(e.Data.ToString()));
+                onError(this, new ErrorEventArgs(7));
             }
         }
 
@@ -72,7 +72,7 @@ namespace SolidTest.Controls
             }
             catch (Exception e)
             {
-                onError(this, new ErrorEventArgs(e.ToString()));
+                onError(this, new ErrorEventArgs(3));
             }
             
         }
@@ -99,7 +99,7 @@ namespace SolidTest.Controls
             }
             catch (Exception e)
             {
-                onError(this, new ErrorEventArgs(e.ToString()));
+                onError(this, new ErrorEventArgs(2));
             }
 
 }

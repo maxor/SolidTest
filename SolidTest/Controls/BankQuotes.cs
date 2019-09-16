@@ -21,7 +21,15 @@ namespace SolidTest.Controls
         public BankQuotes(DateTime date)
         {
             _date = date;
+           
         }
+
+        private void onBankQoutes(object sender, ErrorEventArgs e)
+        {
+            OnError(this, e);
+        }
+
+       
 
         public void GetQuotes()
         {
@@ -29,18 +37,13 @@ namespace SolidTest.Controls
                 _request = new CBRWebData(_date);
             if (_parser == null)
                 _parser = new CBRXMLParser();
-            try
-            {
-                _request.GetData();
+            _request.onError += onBankQoutes;
+            _parser.onError += onBankQoutes;
+            _request.GetData();
                 _parser.ParseXML(CBRXMLTypes.Currency, _request.CurrencyData);
                 _parser.ParseXML(CBRXMLTypes.Rate, _request.RateData);
                 UpdateDB();
                 GenerateExcelFile();
-            }
-            catch (Exception e )
-            {
-                OnError(this, new ErrorEventArgs(e.ToString()));
-            }
         }
         protected void GenerateExcelFile()
         {
@@ -51,7 +54,7 @@ namespace SolidTest.Controls
             }
             catch (Exception e)
             {
-                OnError(this, new ErrorEventArgs(e.ToString()));
+                OnError(this, new ErrorEventArgs(8));
             }
         }
 
